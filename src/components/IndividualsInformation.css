@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "CustomFont";
+  src: url("../fonts/Droid-Naskh-Regular.ttf");
+}
+
+
+
+.individualInformation {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+label {
+  padding: 8px 0;
+  color: #BBE1FA;
+}
+
+input {
+  background-color: #BBE1FA; /* Replace with the desired color */
+}
+
+.input-field {
+  background-color: #BBE1FA; /* Replace with the desired color */
+}
+
+.id-input {
+  display: flex;
+}
+
+.id-digit {
+  width: 30px; /* Adjust the width to your preference */
+  height: 30px; /* Adjust the height to your preference */
+  text-align: center;
+  margin-right: 5px; /* Adjust the spacing between the digits */
+}
+
+.error {
+  padding-top: 10px;
+  color: #FF0000;
+  font-size: 12px;
+}
+
+#fileInput {
+  display: none;
+}
+#icon {
+  cursor: pointer;
+}
+
+.attach {
+  background-color: #BBE1FA;
+  padding: 4px 5px;
+  
+}
+
+.attach img {
+  max-width: 70%;  
+height: auto;  
+}
+
+.attach:hover {
+  background-color: #eee3cb;
+}
+
+h1 {
+  text-align: right;
+  padding-bottom: 40px;
+  color: #FFF4F4;
+}
+
+.form-group {
+  padding-bottom: 30px;
+}
+
+.zero-padding{
+  padding: 0!important;
+}
+
+.date {
+  font-size: 22px;
+  font-weight: 100;
+  font-family: serif;
+}
+
+button {
+  background-color: #0F4C75;
+  color: #fff;
+  border-radius: 4px!important;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: none;
+}
+
+button:active {
+  background-color: #0F4C75;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+button:hover {
+  background-color: #BBE1FA;
+  color: #000;
+  border-radius: 4px!important;
+  padding: 5px 10px;
+}
+
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  background-color: #ccc;
+  color: #292929;
+  border-color: #ccc;
+  cursor: not-allowed;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.invalid {
+  border: 1px solid #b40e0e!important;
+  background-color: #fddddd!important;
+}
+
+
+
+
+
+
