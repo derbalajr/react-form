@@ -48,7 +48,7 @@ input {
 }
 
 .attach {
-  background-color: #BBE1FA;
+  color: #BBE1FA!important;
   padding: 4px 5px;
   
 }
@@ -119,6 +119,7 @@ button:disabled:active {
   border: 1px solid #b40e0e!important;
   background-color: #fddddd!important;
 }
+
 
 
 
