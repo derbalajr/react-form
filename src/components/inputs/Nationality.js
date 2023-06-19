@@ -1,7 +1,7 @@
 
 import React from "react";
 
-export default function Nationality({classes, value, changeHandler, blurHandler}) {
+export default function Nationality({classes, value, changeHandler, blurHandler, hasError}) {
   return (
     <>
       <div className="col-1 zero-padding">
@@ -19,12 +19,13 @@ export default function Nationality({classes, value, changeHandler, blurHandler}
               <option value="egypt">مصر</option>
               <option value="sudan">السودان</option>
             </select>
+            {hasError && (
+          <p className="error">يرجى إختيار البلد</p>
+        )}
           </div>
     </>
   );
 }
-
-
 
 
 

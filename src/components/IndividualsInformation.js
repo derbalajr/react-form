@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+
 import IndividualName from "./inputs/IndividualName";
 import DocumentNumber from "./inputs/DocumentNumber";
 import useInput from "../hooks/use-input";
 import "./IndividualsInformation.css";
 import Attach from "./inputs/Attach";
-import Nationality from "./inputs/Nationalaity";
+import Nationality from "./inputs/Nationality";
+import BirthDate from "./inputs/BirthDate";
+import Category from "./inputs/Category";
+
+import Transit from "./inputs/Transit";
 
 export default function IndividualsInformation() {
+
+  //name
   const {
     value: nameValue,
     valid: nameIsValid,
@@ -21,6 +26,7 @@ export default function IndividualsInformation() {
     return value.trim() !== "" && regex.test(value);
   });
 
+  //document number
   const {
     value: documentNumberValue,
     valid: documentNumberIsValid,
@@ -33,37 +39,109 @@ export default function IndividualsInformation() {
     return regex.test(value);
   });
 
-  //   const {
-  //     value: nationalityValue,
-  //     valid: nationalityIsValid,
-  //     valueChangeHandler: nationalityChangeHandler,
-  //     inputBlurHandler: nationalityBlurHandler,
-  //     reset: resetNationality,
-  //   } = useInput('');
+  //nationality
+  const {
+    value: nationalityValue,
+    valid: nationalityIsValid,
+    valueChangeHandler: nationalityChangeHandler,
+    inputBlurHandler: nationalityBlurHandler,
+    hasError: nationalityHasError,
+    reset: resetNationality,
+  } = useInput((value) => value.trim() !== "");
+
+  //date
+  const {
+    value: dateValue,
+    valid: dateIsValid,
+    inputBlurHandler: dateBlurHandler,
+    hasError: dateHasError,
+    reset: resetDate,
+    handleBirthDateChange,
+  } = useInput((value) => {
+    return !!value;
+  });
+
+  //category
+  const {
+    value: categoryValue,
+    valid: categoryIsValid,
+    valueChangeHandler: categoryChangeHandler,
+    inputBlurHandler: categoryBlurHandler,
+    hasError: categoryHasError,
+    reset: resetCategory,
+  } = useInput((value) => value.trim() !== "");
+
+  //transit
+  const {
+    value: transitValue,
+    valid: transitIsValid,
+    valueChangeHandler: transitChangeHandler,
+    inputBlurHandler: transitBlurHandler,
+    hasError: transitHasError,
+    reset: resetTransit,
+  } = useInput((value) => value.trim() !== "");
 
   let formIsValid = false;
-  if (nameIsValid && documentNumberIsValid) {
+  if (
+    nameIsValid &&
+    documentNumberIsValid &&
+    nationalityIsValid &&
+    dateIsValid &&
+    categoryIsValid &&
+    transitIsValid
+  ) {
     formIsValid = true;
   }
 
   const formSubmissionHandler = (event) => {
     event.preventDefault();
-    if (!nameIsValid && !documentNumberIsValid) {
+    if (
+      !nameIsValid &&
+      !documentNumberIsValid &&
+      !nationalityIsValid &&
+      !dateIsValid &&
+      categoryIsValid &&
+      transitIsValid
+    ) {
       return;
     }
+    
     console.log(nameValue);
     resetName();
 
     console.log(documentNumberValue);
     resetDocumentNumber();
 
-    // console.log(nationalityValue);
-    // resetNationality();
+    console.log(nationalityValue);
+    resetNationality();
+
+    console.log(dateValue);
+    resetDate();
+
+    console.log(categoryValue);
+    resetCategory();
+
+    console.log(transitValue);
+    resetTransit();
   };
 
   const nameClasses = nameHasError ? "form-control invalid" : "form-control";
 
   const documentNumberClasses = documentNumberHasError
+    ? "form-control invalid"
+    : "form-control";
+
+  const nationalityClasses = nationalityHasError
+    ? "form-control invalid"
+    : "form-control";
+
+  const dateClasses = dateHasError ? "form-control invalid" : "form-control";
+
+  const categoryClasses = categoryHasError
+    ? "form-control invalid"
+    : "form-control";
+
+    const transitClasses = categoryHasError
     ? "form-control invalid"
     : "form-control";
 
@@ -94,78 +172,44 @@ export default function IndividualsInformation() {
           <Attach />
           <div className="col-1"></div>
         </div>
-        {/* <div className="row form-group">
+        <div className="row form-group">
           <div className="col-1"></div>
-          
+          <Nationality
+            classes={nationalityClasses}
+            value={nationalityValue}
+            changeHandler={nationalityChangeHandler}
+            blurHandler={nationalityBlurHandler}
+            hasError={nationalityHasError}
+          />
           <div className="col-1"></div>
-          <div className="col-1 zero-padding">
-            <label htmlFor="documentNumber">تاريخ الميلاد</label>
-          </div>
-          <div className="col-3 zero-padding date">
-            <DatePicker
-              selected={birthDate}
-              onChange={handleBirthDateChange}
-              maxDate={maxSelectableDate}
-              dateFormat="dd/MM/yyyy"
-              showMonthDropdown // Enable month dropdown
-              yearDropdownItemNumber={120} // Display 5 years per row
-              scrollableYearDropdown // Enable scrollable year dropdown
-              showYearDropdown
-              className="form-control input-field"
-            />
-          </div>
+          <BirthDate
+            classes={dateClasses}
+            value={dateValue}
+            changeHandler={handleBirthDateChange}
+            blurHandler={dateBlurHandler}
+            hasError={dateHasError}
+          />
           <div className="col-1"></div>
-        </div> */}
-        {/*<div className="row form-group"> 
-           <div className="col-1"></div>
-          <div className="col-1 zero-padding">
-            <label htmlFor="category">التصنيف</label>
-          </div>
-          <div className="col-3 zero-padding">
-            <select
-              className="form-select input-field"
-              id="category"
-              value={category}
-              onChange={handleCategoryChange}
-            >
-              <option value="restProvinces">باقي المحافظات</option>
-              <option value="matrouh">أبناء مطروح</option>
-              <option value="otherNationalities">جنسيات اخري</option>
-            </select>
-          </div>
-          <div className="col-1 zero-padding">
-            <button type="button" className="attach btn">
-              <label className="zero-padding" htmlFor="fileInput">
-                <img id="icon" src="icons/32x32.png" />
-              </label>
-            </button>
-            <input id="fileInput" type="file" />
-          </div>
-          <div className="col-1 zero-padding">
-            <label htmlFor="transitClass">فئة العابر</label>
-          </div>
-          <div className="col-3 zero-padding">
-            <select
-              className="form-select input-field"
-              id="transitClass"
-              value={transitClass}
-              onChange={handleTransitClassChange}
-            >
-              <option value="nothing">لا يوجد</option>
-              <option value="diplomat">دبلوماسي</option>
-              <option value="specialNeeds">ذوي احتياجات</option>
-            </select>
-          </div>
-          <div className="col-1 zero-padding">
-            <button type="button" className="attach btn">
-              <label className="zero-padding" htmlFor="fileInput">
-                <img id="icon" src="icons/32x32.png" />
-              </label>
-            </button>
-
-            <input id="fileInput" type="file" />
-          </div> 
-        </div>*/}
+        </div>
+        <div className="row form-group">
+          <div className="col-1"></div>
+          <Category
+            classes={categoryClasses}
+            value={categoryValue}
+            changeHandler={categoryChangeHandler}
+            blurHandler={categoryBlurHandler}
+            hasError={categoryHasError}
+          />
+          <Attach />
+          <Transit
+            classes={transitClasses}
+            value={transitValue}
+            changeHandler={transitChangeHandler}
+            blurHandler={transitBlurHandler}
+            hasError={transitHasError}
+          />
+          <Attach />
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-1"></div>

@@ -4,27 +4,34 @@ const useInput = (validateValue) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);
 
-  const valueIsValid = validateValue(enteredValue); 
+  const valueIsValid = validateValue(enteredValue);
   const hasError = !valueIsValid && isTouched;
 
-  const valueChangeHandler = event => {
+  const valueChangeHandler = (event) => {
     setEnteredValue(event.target.value);
   };
-  const inputBlurHandler = event => {
+  const inputBlurHandler = (event) => {
     setIsTouched(true);
   };
 
   const reset = () => {
-    setEnteredValue('');
+    setEnteredValue("");
     setIsTouched(false);
   };
 
-  return{
-    value: enteredValue, valid: valueIsValid, hasError, valueChangeHandler, inputBlurHandler, reset
+  const handleBirthDateChange = (date) => {
+    setEnteredValue(date);
+  };
+
+  return {
+    value: enteredValue,
+    valid: valueIsValid,
+    hasError,
+    valueChangeHandler,
+    inputBlurHandler,
+    reset,
+    handleBirthDateChange,
   };
 };
-
-
-
 
 export default useInput;
