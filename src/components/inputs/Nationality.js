@@ -15,9 +15,9 @@ export default function Nationality({classes, value, changeHandler, blurHandler,
               onChange={changeHandler}
               onBlur={blurHandler}
             >
-              <option value="libya">ليبيا</option>
-              <option value="egypt">مصر</option>
-              <option value="sudan">السودان</option>
+              <option value="ليبيا">ليبيا</option>
+              <option value="مصر">مصر</option>
+              <option value="السودان">السودان</option>
             </select>
             {hasError && (
           <p className="error">يرجى إختيار البلد</p>

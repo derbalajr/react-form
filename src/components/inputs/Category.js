@@ -15,9 +15,9 @@ export default function Category({classes, value, changeHandler, blurHandler, ha
               onChange={changeHandler}
               onBlur={blurHandler}
             >
-              <option value="restProvinces">باقي المحافظات</option>
-              <option value="matrouh">أبناء مطروح</option>
-              <option value="otherNationalities">جنسيات اخري</option>
+              <option value="باقي المحافظات">باقي المحافظات</option>
+              <option value="أبناء مطروح">أبناء مطروح</option>
+              <option value="جنسيات اخري">جنسيات اخري</option>
             </select>
             {hasError && (
           <p className="error">يرجى إختيار التصنيف</p>

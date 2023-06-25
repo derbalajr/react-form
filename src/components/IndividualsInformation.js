@@ -10,8 +10,13 @@ import BirthDate from "./inputs/BirthDate";
 import Category from "./inputs/Category";
 
 import Transit from "./inputs/Transit";
+import IndividualsTable from "./IndividualsTable";
+import { addIndividual } from "../store";
+import { useDispatch } from 'react-redux';
 
 export default function IndividualsInformation() {
+
+  const dispatch = useDispatch();
 
   //name
   const {
@@ -105,6 +110,17 @@ export default function IndividualsInformation() {
     ) {
       return;
     }
+
+    const newIndividual = {
+      name: nameValue,
+      documentNumber: documentNumberValue,
+      nationality: nationalityValue,
+      date: dateValue,
+      category: categoryValue,
+      transit: transitValue,
+    };
+
+    dispatch(addIndividual(newIndividual));
     
     console.log(nameValue);
     resetName();
@@ -219,33 +235,13 @@ export default function IndividualsInformation() {
           </div>
         </div>
       </form>
+      <div className="container mb-5">
 
-      {/* <div className="container">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Document Number</th>
-              <th>Nationality</th>
-              <th>Birth Date</th>
-              <th>Category</th>
-              <th>Transit Class</th>
-            </tr>
-          </thead>
-          <tbody>
-            {formData.map((entry, index) => (
-              <tr key={index}>
-                <td>{entry.name}</td>
-                <td>{entry.documentNumber}</td>
-                <td>{entry.nationality}</td>
-                <td>{entry.birthDate?.toLocaleDateString()}</td>
-                <td>{entry.category}</td>
-                <td>{entry.transitClass}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div> */}
+      <IndividualsTable/>
+      </div>
+
+
+      
     </>
   );
 }

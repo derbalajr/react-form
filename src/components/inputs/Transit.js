@@ -15,9 +15,9 @@ export default function Transit({classes, value, changeHandler, blurHandler, has
               onChange={changeHandler}
               onBlur={blurHandler}
             >
-              <option value="nothing">لا يوجد</option>
-              <option value="diplomat">دبلوماسي</option>
-              <option value="specialNeeds">ذوي احتياجات</option>
+              <option value="لا يوجد">لا يوجد</option>
+              <option value="دبلوماسي">دبلوماسي</option>
+              <option value="ذوي احتياجات">ذوي احتياجات</option>
             </select>
             {hasError && (
           <p className="error">يرجى إختيار فئة العابر</p>
