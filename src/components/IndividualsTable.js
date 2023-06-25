@@ -4,7 +4,9 @@ import "./css/IndividualsTable.css";
 
 export default function IndividualsTable() {
   return (
+    <>
     <div className="individuals-table">
+    <h4>قائمة العابرين</h4>
       <table className="table table-striped table-dark custom-table">
         <thead>
           <tr>
@@ -17,10 +19,10 @@ export default function IndividualsTable() {
           </tr>
         </thead>
         <tbody>
-        
           <IndividualRow />
         </tbody>
       </table>
     </div>
+    </>
   );
 }

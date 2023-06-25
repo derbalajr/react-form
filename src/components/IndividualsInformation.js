@@ -183,7 +183,6 @@ export default function IndividualsInformation() {
             blurHandler={documentNumberBlurHandler}
             hasError={documentNumberHasError}
           />
-
           <Attach />
           <div className="col-1"></div>
         </div>
@@ -233,11 +232,7 @@ export default function IndividualsInformation() {
             </div>
           </div>
         </div>
-      </form>
-      
-
-
-      
+      </form>      
     </>
   );
 }

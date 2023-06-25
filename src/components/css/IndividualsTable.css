@@ -16,6 +16,10 @@
 
 }
 
-table{
+.individuals-table{
   margin-top: 50px;
+}
+
+h4{
+  color:#BBE1FA!important;
 }

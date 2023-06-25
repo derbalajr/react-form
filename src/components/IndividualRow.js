@@ -4,8 +4,10 @@ import { useSelector } from "react-redux";
 export default function IndividualRow() {
   const individuals = useSelector((state) => state.individuals);
   const formatDate = (date) => {
-    const options = { day: "2-digit", month: "2-digit", year: "numeric" };
-    return date.toLocaleDateString("en-GB", options);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}/${month}/${day}`;
   };
   return (
     <>
