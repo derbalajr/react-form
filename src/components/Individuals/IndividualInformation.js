@@ -1,20 +1,22 @@
 import React from "react";
 
-import IndividualName from "./inputs/IndividualName";
-import DocumentNumber from "./inputs/DocumentNumber";
-import useInput from "../hooks/use-input";
+import IndividualName from "../inputs/IndividualName";
+import DocumentNumber from "../inputs/DocumentNumber";
+import Attach from "../inputs/Attach";
+import Nationality from "../inputs/Nationality";
+import BirthDate from "../inputs/BirthDate";
+import Category from "../inputs/Category";
+import Transit from "../inputs/Transit";
+
+import useInput from "../../hooks/use-input";
+
+import { addIndividual } from "../../store";
+
+import { useDispatch } from "react-redux";
+
 import "./css/IndividualsInformation.css";
-import Attach from "./inputs/Attach";
-import Nationality from "./inputs/Nationality";
-import BirthDate from "./inputs/BirthDate";
-import Category from "./inputs/Category";
 
-import Transit from "./inputs/Transit";
-import { addIndividual } from "../store";
-import { useDispatch } from 'react-redux';
-
-export default function IndividualsInformation() {
-
+export default function IndividualInformation() {
   const dispatch = useDispatch();
 
   //name
@@ -120,7 +122,7 @@ export default function IndividualsInformation() {
     };
 
     dispatch(addIndividual(newIndividual));
-    
+
     console.log(nameValue);
     resetName();
 
@@ -156,7 +158,7 @@ export default function IndividualsInformation() {
     ? "form-control invalid"
     : "form-control";
 
-    const transitClasses = categoryHasError
+  const transitClasses = categoryHasError
     ? "form-control invalid"
     : "form-control";
 
@@ -232,7 +234,7 @@ export default function IndividualsInformation() {
             </div>
           </div>
         </div>
-      </form>      
+      </form>
     </>
   );
 }

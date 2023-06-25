@@ -1,5 +1,5 @@
 import './App.css';
-import Individuals from './components/Individuals'
+import Individuals from './components/Individuals/Individuals'
 import React from 'react';
 
 function App() {
@@ -9,5 +9,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

@@ -1,0 +1,24 @@
+.custom-table {
+  background-color: #f8f9fa !important;
+  color: #212529 !important;
+}
+
+.custom-table th {
+  background-color: #0f4c75 !important;
+  color: #ffffff !important;
+  text-align: center !important;
+}
+
+.custom-table td {
+  background-color: #1b262c !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+.individuals-table {
+  margin-top: 50px;
+}
+
+h4 {
+  color: #bbe1fa !important;
+}
