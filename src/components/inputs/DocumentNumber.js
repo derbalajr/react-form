@@ -17,7 +17,7 @@ export default function DocumentNumber({classes, value, changeHandler, blurHandl
           placeholder=""
         />
         {hasError && (
-          <p className="error">يرجى إدخال رقم الوثيقة المكون من 12 رقم فقط</p>
+          <p className="error">يرجى إدخال رقم الوثيقة المكون من 5-15 حروف وأرقام فقط</p>
         )}
       </div>
     </>
