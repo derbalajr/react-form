@@ -15,7 +15,7 @@ export default function IndividualsTable() {
               <th>الجنسية</th>
               <th>تاريخ الميلاد</th>
               <th>التصنيف</th>
-              <th>فئة العابر</th>
+              <th>حالة الاعفاء</th>
             </tr>
           </thead>
           <tbody>

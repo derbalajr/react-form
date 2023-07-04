@@ -5,7 +5,8 @@ import DocumentNumber from "../inputs/DocumentNumber";
 import Attach from "../inputs/Attach";
 import Nationality from "../inputs/Nationality";
 import BirthDate from "../inputs/BirthDate";
-import Category from "../inputs/Category";
+import OtherCategory from "../inputs/OtherCategory";
+import EgyptCategory from "../inputs/EgyptCategory";
 import Transit from "../inputs/Transit";
 
 import useInput from "../../hooks/use-input";
@@ -112,13 +113,19 @@ export default function IndividualInformation() {
       return;
     }
 
+    const currentDate = new Date();
     const newIndividual = {
       name: nameValue,
       documentNumber: documentNumberValue,
       nationality: nationalityValue,
       date: dateValue,
       category: categoryValue,
-      transit: transitValue,
+      transit:
+        transitValue === "لا يوجد"
+          ? "غير معفي"
+          : transitValue === "دبلوماسي" || transitValue === "ذوي احتياجات"
+          ? "معفي"
+          : transitValue,
     };
 
     dispatch(addIndividual(newIndividual));
@@ -209,13 +216,24 @@ export default function IndividualInformation() {
         </div>
         <div className="row form-group">
           <div className="col-1"></div>
-          <Category
-            classes={categoryClasses}
-            value={categoryValue}
-            changeHandler={categoryChangeHandler}
-            blurHandler={categoryBlurHandler}
-            hasError={categoryHasError}
-          />
+          {nationalityValue === "مصر" ? (
+            <EgyptCategory
+              classes={categoryClasses}
+              value={categoryValue}
+              changeHandler={categoryChangeHandler}
+              blurHandler={categoryBlurHandler}
+              hasError={categoryHasError}
+            />
+          ) : (
+            <OtherCategory
+              classes={categoryClasses}
+              value={categoryValue}
+              changeHandler={categoryChangeHandler}
+              blurHandler={categoryBlurHandler}
+              hasError={categoryHasError}
+            />
+          )}
+
           <Attach />
           <Transit
             classes={transitClasses}

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Category({
+export default function OtherCategory({
   classes,
   value,
   changeHandler,
@@ -21,9 +21,6 @@ export default function Category({
           onBlur={blurHandler}
         >
           <option value="">-- اختر التصنيف --</option>
-
-          <option value="باقي المحافظات">باقي المحافظات</option>
-          <option value="أبناء مطروح">أبناء مطروح</option>
           <option value="جنسيات اخري">جنسيات اخري</option>
         </select>
         {hasError && <p className="error">يرجى إختيار التصنيف</p>}
