@@ -15,10 +15,20 @@ import { addIndividual } from "../../store";
 
 import { useDispatch } from "react-redux";
 
+import { Localization } from "react-localization";
+
+import en from "./translation/en.json";
+import ar from "./translation/ar.json";
+
 import "./css/IndividualsInformation.css";
 
 export default function IndividualInformation() {
   const dispatch = useDispatch();
+
+  const localization = new Localization({
+    en: en,
+    ar: ar,
+  });
 
   //name
   const {
@@ -113,7 +123,6 @@ export default function IndividualInformation() {
       return;
     }
 
-    const currentDate = new Date();
     const newIndividual = {
       name: nameValue,
       documentNumber: documentNumberValue,
@@ -121,10 +130,10 @@ export default function IndividualInformation() {
       date: dateValue,
       category: categoryValue,
       transit:
-        transitValue === "لا يوجد"
-          ? "غير معفي"
-          : transitValue === "دبلوماسي" || transitValue === "ذوي احتياجات"
-          ? "معفي"
+        transitValue === "nothing"
+          ? localization.translate("not_exempted")
+          : transitValue === "diplomatic" || transitValue === "special_needs"
+          ? localization.translate("exempted")
           : transitValue,
     };
 
@@ -216,7 +225,7 @@ export default function IndividualInformation() {
         </div>
         <div className="row form-group">
           <div className="col-1"></div>
-          {nationalityValue === "مصر" ? (
+          {nationalityValue === "egypt" ? (
             <EgyptCategory
               classes={categoryClasses}
               value={categoryValue}
@@ -248,7 +257,9 @@ export default function IndividualInformation() {
           <div className="row">
             <div className="col-1"></div>
             <div className="form-actions col-1 zero-padding">
-              <button disabled={!formIsValid}>اضافة</button>
+              <button disabled={!formIsValid}>
+                {localization.translate("add")}
+              </button>
             </div>
           </div>
         </div>

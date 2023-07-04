@@ -1,5 +1,10 @@
 import React from "react";
 
+import { Localization } from "react-localization";
+
+import en from "./translation/en.json";
+import ar from "./translation/ar.json";
+
 export default function IndividualName({
   classes,
   value,
@@ -7,10 +12,14 @@ export default function IndividualName({
   blurHandler,
   hasError,
 }) {
+  const localization = new Localization({
+    en: en,
+    ar: ar,
+  });
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="name">الأسم</label>
+        <label htmlFor="name">{localization.translate("name")}</label>
       </div>
       <div className="col-3 zero-padding">
         <input
@@ -24,8 +33,7 @@ export default function IndividualName({
         />
         {hasError && (
           <p className="error">
-            يرجى إدخال قيمة صحيحة تحتوي على أحرف عربية وإنجليزية فقط ومسافات،
-            ولا تتجاوز 200 حرف
+          {localization.translate("name_error")}
           </p>
         )}
       </div>

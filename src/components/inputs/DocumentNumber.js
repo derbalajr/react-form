@@ -1,10 +1,27 @@
 import React from "react";
 
-export default function DocumentNumber({classes, value, changeHandler, blurHandler, hasError}) {
+import { Localization } from "react-localization";
+
+import en from "./translation/en.json";
+import ar from "./translation/ar.json";
+
+export default function DocumentNumber({
+  classes,
+  value,
+  changeHandler,
+  blurHandler,
+  hasError,
+}) {
+  const localization = new Localization({
+    en: en,
+    ar: ar,
+  });
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="documentNumber">رقم الوثيقة</label>
+        <label htmlFor="doc_number">
+          {localization.translate("doc_number")}
+        </label>
       </div>
       <div className="col-3 zero-padding">
         <input
@@ -17,7 +34,7 @@ export default function DocumentNumber({classes, value, changeHandler, blurHandl
           placeholder=""
         />
         {hasError && (
-          <p className="error">يرجى إدخال رقم الوثيقة المكون من 5-15 حروف وأرقام فقط</p>
+          <p className="error">{localization.translate("doc_number_error")}</p>
         )}
       </div>
     </>

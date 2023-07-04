@@ -1,5 +1,10 @@
 import React from "react";
 
+import { Localization } from "react-localization";
+
+import en from "./translation/en.json";
+import ar from "./translation/ar.json";
+
 export default function Nationality({
   classes,
   value,
@@ -7,10 +12,16 @@ export default function Nationality({
   blurHandler,
   hasError,
 }) {
+  const localization = new Localization({
+    en: en,
+    ar: ar,
+  });
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="nationality">الجنسية</label>
+        <label htmlFor="nationality">
+          {localization.translate("nationality")}
+        </label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -20,12 +31,16 @@ export default function Nationality({
           onChange={changeHandler}
           onBlur={blurHandler}
         >
-          <option value="">-- اختر البلد --</option>
-          <option value="ليبيا">ليبيا</option>
-          <option value="مصر">مصر</option>
-          <option value="السودان">السودان</option>
+          <option value="">
+            -- {localization.translate("choose_nationality")} --
+          </option>
+          <option value="libya">{localization.translate("libya")}</option>
+          <option value="egypt">{localization.translate("egypt")}</option>
+          <option value="sudan">{localization.translate("sudan")}</option>
         </select>
-        {hasError && <p className="error">يرجى إختيار البلد</p>}
+        {hasError && (
+          <p className="error">{localization.translate("nationality_error")}</p>
+        )}
       </div>
     </>
   );
