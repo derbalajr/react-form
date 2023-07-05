@@ -1,5 +1,10 @@
 import React from "react";
 
+import { Localization } from "react-localization";
+
+import en from "./translation/en.json";
+import ar from "./translation/ar.json";
+
 export default function OtherCategory({
   classes,
   value,
@@ -7,10 +12,14 @@ export default function OtherCategory({
   blurHandler,
   hasError,
 }) {
+  const localization = new Localization({
+    en: en,
+    ar: ar,
+  });
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="category">التصنيف</label>
+        <label htmlFor="category">{localization.translate("category")}</label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -20,10 +29,10 @@ export default function OtherCategory({
           onChange={changeHandler}
           onBlur={blurHandler}
         >
-          <option value="">-- اختر التصنيف --</option>
-          <option value="جنسيات اخري">جنسيات اخري</option>
+          <option value="">-- {localization.translate("choose_category")} --</option>
+          <option value="other_nationalities">{localization.translate("category")}</option>
         </select>
-        {hasError && <p className="error">يرجى إختيار التصنيف</p>}
+        {hasError && <p className="error">{localization.translate("category_error")}</p>}category_error
       </div>
     </>
   );

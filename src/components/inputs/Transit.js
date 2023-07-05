@@ -1,5 +1,10 @@
 import React from "react";
 
+import { Localization } from "react-localization";
+
+import en from "./translation/en.json";
+import ar from "./translation/ar.json";
+
 export default function Transit({
   classes,
   value,
@@ -7,10 +12,14 @@ export default function Transit({
   blurHandler,
   hasError,
 }) {
+  const localization = new Localization({
+    en: en,
+    ar: ar,
+  });
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="transitClass">فئة العابر</label>
+        <label htmlFor="transit_class">{localization.translate("transit_class")}</label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -20,12 +29,12 @@ export default function Transit({
           onChange={changeHandler}
           onBlur={blurHandler}
         >
-          <option value="">-- اختر فئة العابر --</option>
-          <option value="لا يوجد">لا يوجد</option>
-          <option value="دبلوماسي">دبلوماسي</option>
-          <option value="ذوي احتياجات">ذوي احتياجات</option>
+          <option value="">-- {localization.translate("choose_transit_class")} --</option>
+          <option value="nothing">{localization.translate("nothing")}</option>
+          <option value="diplomatic">{localization.translate("diplomatic")}</option>
+          <option value="special_needs">{localization.translate("special_needs")}</option>
         </select>
-        {hasError && <p className="error">يرجى إختيار فئة العابر</p>}
+        {hasError && <p className="error">{localization.translate("transit_class_error")}</p>}
       </div>
     </>
   );

@@ -16,11 +16,17 @@
   "category_error": "Please select a category",
   "nationality_error": "Please select a country",
   "name_error": "Please enter a valid value containing only Arabic and English characters and spaces, and not exceeding 200 characters",
+  "transit_class_error": "Please select a transit class",
   "choose_category": "Choose The Category",
   "choose_nationality": "Choose The Nationality",
+  "choose_transit_class": "Choose Transit Class",
   "rest_provinces": "The rest of the provinces",
   "matrouh_residents": "Matrouh Residents",
   "egypt": "Egypt",
   "libya": "Libya",
-  "sudan": "Sudan"
+  "sudan": "Sudan",
+  "other_nationalities": "Other Nationalities",
+  "transit_class": "Transit Class",
+  "diplomatic": "Diplomatic",
+  "special_needs": "Special Needs"
 }
