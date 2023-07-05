@@ -127,9 +127,9 @@ export default function IndividualInformation() {
       category: categoryValue,
       transit:
         transitValue === "nothing"
-          ? t("not_exempted")
+          ? "not_exempted"
           : transitValue === "diplomatic" || transitValue === "special_needs"
-          ? t("exempted")
+          ? "exempted"
           : transitValue,
     };
 

@@ -25,7 +25,7 @@ export default function OtherCategory({
           onBlur={blurHandler}
         >
           <option value="">-- {t("choose_category")} --</option>
-          <option value="other_nationalities">{t("category")}</option>
+          <option value="other_nationalities">{t("other_nationalities")}</option>
         </select>
         {hasError && <p className="error">{t("category_error")}</p>}
       </div>

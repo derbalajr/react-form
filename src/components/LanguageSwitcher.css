@@ -1,7 +1,7 @@
-label {
+.language-switcher label {
   cursor: pointer;
 }
 
-label:hover {
+.language-switcher label:hover {
   color: #fff;
 }
