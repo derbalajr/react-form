@@ -15,20 +15,16 @@ import { addIndividual } from "../../store";
 
 import { useDispatch } from "react-redux";
 
-import { Localization } from "react-localization";
+import { useTranslation } from 'react-i18next';
 
-import en from "../../translation/en.json";
-import ar from "../../translation/ar.json";
 
 import "./css/IndividualsInformation.css";
 
+
 export default function IndividualInformation() {
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
-  const localization = new Localization({
-    en: en,
-    ar: ar,
-  });
 
   //name
   const {
@@ -131,9 +127,9 @@ export default function IndividualInformation() {
       category: categoryValue,
       transit:
         transitValue === "nothing"
-          ? localization.translate("not_exempted")
+          ? t("not_exempted")
           : transitValue === "diplomatic" || transitValue === "special_needs"
-          ? localization.translate("exempted")
+          ? t("exempted")
           : transitValue,
     };
 
@@ -258,7 +254,7 @@ export default function IndividualInformation() {
             <div className="col-1"></div>
             <div className="form-actions col-1 zero-padding">
               <button disabled={!formIsValid}>
-                {localization.translate("add")}
+                {t("add")}
               </button>
             </div>
           </div>

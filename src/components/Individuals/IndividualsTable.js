@@ -1,31 +1,24 @@
 import React from "react";
 import IndividualRow from "./IndividualRow";
-
-import { Localization } from "react-localization";
-
-import en from "../../translation/en.json";
-import ar from "../../translation/ar.json";
+import { useTranslation } from 'react-i18next';
 
 import "./css/IndividualsTable.css";
 
 export default function IndividualsTable() {
-  const localization = new Localization({
-    en: en,
-    ar: ar,
-  });
+  const { t } = useTranslation();
   return (
     <>
       <div className="individuals-table">
-        <h4>{localization.translate('transients_list')}</h4>
+        <h4>{t('transients_list')}</h4>
         <table className="table table-striped table-dark custom-table">
           <thead>
             <tr>
-              <th>{localization.translate('name')}</th>
-              <th>{localization.translate('doc_number')}</th>
-              <th>{localization.translate('nationality')}</th>
-              <th>{localization.translate('birth_date')}</th>
-              <th>{localization.translate('category')}</th>
-              <th>{localization.translate('exemption_status')}</th>
+              <th>{t('name')}</th>
+              <th>{t('doc_number')}</th>
+              <th>{t('nationality')}</th>
+              <th>{t('birth_date')}</th>
+              <th>{t('category')}</th>
+              <th>{t('exemption_status')}</th>
             </tr>
           </thead>
           <tbody>

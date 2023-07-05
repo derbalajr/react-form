@@ -1,9 +1,6 @@
 import React from "react";
 
-import { Localization } from "react-localization";
-
-import en from "../../translation/en.json";
-import ar from "../../translation/ar.json";
+import { useTranslation } from "react-i18next";
 
 export default function Transit({
   classes,
@@ -12,14 +9,11 @@ export default function Transit({
   blurHandler,
   hasError,
 }) {
-  const localization = new Localization({
-    en: en,
-    ar: ar,
-  });
+  const { t } = useTranslation();
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="transit_class">{localization.translate("transit_class")}</label>
+        <label htmlFor="transit_class">{t("transit_class")}</label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -29,12 +23,12 @@ export default function Transit({
           onChange={changeHandler}
           onBlur={blurHandler}
         >
-          <option value="">-- {localization.translate("choose_transit_class")} --</option>
-          <option value="nothing">{localization.translate("nothing")}</option>
-          <option value="diplomatic">{localization.translate("diplomatic")}</option>
-          <option value="special_needs">{localization.translate("special_needs")}</option>
+          <option value="">-- {t("choose_transit_class")} --</option>
+          <option value="nothing">{t("nothing")}</option>
+          <option value="diplomatic">{t("diplomatic")}</option>
+          <option value="special_needs">{t("special_needs")}</option>
         </select>
-        {hasError && <p className="error">{localization.translate("transit_class_error")}</p>}
+        {hasError && <p className="error">{t("transit_class_error")}</p>}
       </div>
     </>
   );

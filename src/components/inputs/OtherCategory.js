@@ -1,9 +1,6 @@
 import React from "react";
 
-import { Localization } from "react-localization";
-
-import en from "../../translation/en.json";
-import ar from "../../translation/ar.json";
+import { useTranslation } from "react-i18next";
 
 export default function OtherCategory({
   classes,
@@ -12,14 +9,12 @@ export default function OtherCategory({
   blurHandler,
   hasError,
 }) {
-  const localization = new Localization({
-    en: en,
-    ar: ar,
-  });
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="category">{localization.translate("category")}</label>
+        <label htmlFor="category">{t("category")}</label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -29,10 +24,10 @@ export default function OtherCategory({
           onChange={changeHandler}
           onBlur={blurHandler}
         >
-          <option value="">-- {localization.translate("choose_category")} --</option>
-          <option value="other_nationalities">{localization.translate("category")}</option>
+          <option value="">-- {t("choose_category")} --</option>
+          <option value="other_nationalities">{t("category")}</option>
         </select>
-        {hasError && <p className="error">{localization.translate("category_error")}</p>}category_error
+        {hasError && <p className="error">{t("category_error")}</p>}
       </div>
     </>
   );

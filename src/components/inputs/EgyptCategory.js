@@ -1,9 +1,6 @@
 import React from "react";
 
-import { Localization } from "react-localization";
-
-import en from "../../translation/en.json";
-import ar from "../../translation/ar.json";
+import { useTranslation } from "react-i18next";
 
 export default function EgyptCategory({
   classes,
@@ -12,14 +9,11 @@ export default function EgyptCategory({
   blurHandler,
   hasError,
 }) {
-  const localization = new Localization({
-    en: en,
-    ar: ar,
-  });
+  const { t } = useTranslation();
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="category">{localization.translate("category")}</label>
+        <label htmlFor="category">{t("category")}</label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -30,17 +24,17 @@ export default function EgyptCategory({
           onBlur={blurHandler}
         >
           <option value="">
-            -- {localization.translate("choose_category")} --
+            -- {t("choose_category")} --
           </option>
           <option value="rest_provinces">
-            {localization.translate("rest_provinces")}
+            {t("rest_provinces")}
           </option>
           <option value="matrouh_residents">
-            {localization.translate("matrouh_residents")}
+            {t("matrouh_residents")}
           </option>
         </select>
         {hasError && (
-          <p className="error">{localization.translate("category_error")}</p>
+          <p className="error">{t("category_error")}</p>
         )}
       </div>
     </>

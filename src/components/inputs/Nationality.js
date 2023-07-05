@@ -1,9 +1,6 @@
 import React from "react";
 
-import { Localization } from "react-localization";
-
-import en from "../../translation/en.json";
-import ar from "../../translation/ar.json";
+import { useTranslation } from "react-i18next";
 
 export default function Nationality({
   classes,
@@ -12,15 +9,13 @@ export default function Nationality({
   blurHandler,
   hasError,
 }) {
-  const localization = new Localization({
-    en: en,
-    ar: ar,
-  });
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="nationality">
-          {localization.translate("nationality")}
+          {t("nationality")}
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -32,14 +27,14 @@ export default function Nationality({
           onBlur={blurHandler}
         >
           <option value="">
-            -- {localization.translate("choose_nationality")} --
+            -- {t("choose_nationality")} --
           </option>
-          <option value="libya">{localization.translate("libya")}</option>
-          <option value="egypt">{localization.translate("egypt")}</option>
-          <option value="sudan">{localization.translate("sudan")}</option>
+          <option value="libya">{t("libya")}</option>
+          <option value="egypt">{t("egypt")}</option>
+          <option value="sudan">{t("sudan")}</option>
         </select>
         {hasError && (
-          <p className="error">{localization.translate("nationality_error")}</p>
+          <p className="error">{t("nationality_error")}</p>
         )}
       </div>
     </>
