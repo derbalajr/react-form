@@ -252,7 +252,7 @@ export default function IndividualInformation() {
         <div className="container">
           <div className="row">
             <div className="col-1"></div>
-            <div className="form-actions col-1 zero-padding">
+            <div className="form-actions col-1 zero-padding submit">
               <button disabled={!formIsValid}>
                 {t("add")}
               </button>

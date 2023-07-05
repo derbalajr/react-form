@@ -7,6 +7,7 @@ import IndividualsTable from "./IndividualsTable";
 import { useSelector } from "react-redux";
 
 import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from "../LanguageSwitcher";
 
 
 import "./css/Individuals.css";
@@ -20,6 +21,7 @@ export default function Individuals() {
       <div className="header">
         <h2>{t("individuals_screen")}</h2>
       </div>
+      <LanguageSwitcher />
       <IndividualInformation />
       <div className="container">
         {individuals.length !== 0 && <IndividualsTable />}
