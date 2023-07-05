@@ -17,8 +17,8 @@ import { useDispatch } from "react-redux";
 
 import { Localization } from "react-localization";
 
-import en from "./translation/en.json";
-import ar from "./translation/ar.json";
+import en from "../../translation/en.json";
+import ar from "../../translation/ar.json";
 
 import "./css/IndividualsInformation.css";
 
