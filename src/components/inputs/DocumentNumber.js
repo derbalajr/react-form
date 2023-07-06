@@ -1,7 +1,5 @@
 import React from "react";
-
-import { useTranslation } from 'react-i18next';
-
+import Translate from "../Translate";
 
 export default function DocumentNumber({
   classes,
@@ -10,12 +8,11 @@ export default function DocumentNumber({
   blurHandler,
   hasError,
 }) {
-  const { t } = useTranslation();
   return (
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="doc_number">
-          {t("doc_number")}
+          <Translate sentence={"doc_number"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -29,7 +26,9 @@ export default function DocumentNumber({
           placeholder=""
         />
         {hasError && (
-          <p className="error">{t("doc_number_error")}</p>
+          <p className="error">
+            <Translate sentence={"doc_number_error"} />
+          </p>
         )}
       </div>
     </>

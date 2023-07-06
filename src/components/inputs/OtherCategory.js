@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useTranslation } from "react-i18next";
+import Translate from "../Translate";
 
 export default function OtherCategory({
   classes,
@@ -9,12 +9,12 @@ export default function OtherCategory({
   blurHandler,
   hasError,
 }) {
-  const { t } = useTranslation();
-
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="category">{t("category")}</label>
+        <label htmlFor="category">
+          <Translate sentence={"category"} />
+        </label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -24,10 +24,18 @@ export default function OtherCategory({
           onChange={changeHandler}
           onBlur={blurHandler}
         >
-          <option value="">-- {t("choose_category")} --</option>
-          <option value="other_nationalities">{t("other_nationalities")}</option>
+          <option value="">
+            -- <Translate sentence={"choose_category"} /> --
+          </option>
+          <option value="other_nationalities">
+            <Translate sentence={"other_nationalities"} />
+          </option>
         </select>
-        {hasError && <p className="error">{t("category_error")}</p>}
+        {hasError && (
+          <p className="error">
+            <Translate sentence={"category_error"} />
+          </p>
+        )}
       </div>
     </>
   );

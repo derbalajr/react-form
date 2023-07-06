@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useTranslation } from "react-i18next";
+import Translate from "../Translate";
 
 export default function Transit({
   classes,
@@ -9,11 +9,12 @@ export default function Transit({
   blurHandler,
   hasError,
 }) {
-  const { t } = useTranslation();
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="transit_class">{t("transit_class")}</label>
+        <label htmlFor="transit_class">
+          <Translate sentence={"transit_class"} />
+        </label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -23,12 +24,24 @@ export default function Transit({
           onChange={changeHandler}
           onBlur={blurHandler}
         >
-          <option value="">-- {t("choose_transit_class")} --</option>
-          <option value="nothing">{t("nothing")}</option>
-          <option value="diplomatic">{t("diplomatic")}</option>
-          <option value="special_needs">{t("special_needs")}</option>
+          <option value="">
+            -- <Translate sentence={"choose_transit_class"} /> --
+          </option>
+          <option value="nothing">
+            <Translate sentence={"nothing"} />
+          </option>
+          <option value="diplomatic">
+            <Translate sentence={"diplomatic"} />
+          </option>
+          <option value="special_needs">
+            <Translate sentence={"special_needs"} />
+          </option>
         </select>
-        {hasError && <p className="error">{t("transit_class_error")}</p>}
+        {hasError && (
+          <p className="error">
+            <Translate sentence={"transit_class_error"} />
+          </p>
+        )}
       </div>
     </>
   );

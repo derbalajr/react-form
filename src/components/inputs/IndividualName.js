@@ -1,7 +1,6 @@
 import React from "react";
 
-import { useTranslation } from "react-i18next";
-
+import Translate from "../Translate";
 
 export default function IndividualName({
   classes,
@@ -10,11 +9,12 @@ export default function IndividualName({
   blurHandler,
   hasError,
 }) {
-  const { t } = useTranslation();
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="name">{t("name")}</label>
+        <label htmlFor="name">
+          <Translate sentence={"name"} />
+        </label>
       </div>
       <div className="col-3 zero-padding">
         <input
@@ -28,7 +28,7 @@ export default function IndividualName({
         />
         {hasError && (
           <p className="error">
-          {t("name_error")}
+            <Translate sentence={"name_error"} />
           </p>
         )}
       </div>

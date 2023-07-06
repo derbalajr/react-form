@@ -1,12 +1,9 @@
 import React from "react";
 
 import { useSelector } from "react-redux";
-
-import { useTranslation } from 'react-i18next';
-
+import Translate from "../Translate";
 
 export default function IndividualRow() {
-  const { t } = useTranslation();
   const individuals = useSelector((state) => state.individuals);
   const formatDate = (date) => {
     const year = date.getFullYear();
@@ -20,10 +17,16 @@ export default function IndividualRow() {
         <tr key={index}>
           <td>{individual.name}</td>
           <td>{individual.documentNumber}</td>
-          <td>{t(individual.nationality)}</td>
+          <td>
+            <Translate sentence={individual.nationality} />
+          </td>
           <td>{formatDate(individual.date)}</td>
-          <td>{t(individual.category)}</td>
-          <td>{t(individual.transit)}</td>
+          <td>
+            <Translate sentence={individual.category} />
+          </td>
+          <td>
+            <Translate sentence={individual.transit} />
+          </td>
         </tr>
       ))}
     </>

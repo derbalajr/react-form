@@ -1,6 +1,5 @@
 import React from "react";
-
-import { useTranslation } from "react-i18next";
+import Translate from "../Translate";
 
 export default function EgyptCategory({
   classes,
@@ -9,11 +8,12 @@ export default function EgyptCategory({
   blurHandler,
   hasError,
 }) {
-  const { t } = useTranslation();
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="category">{t("category")}</label>
+        <label htmlFor="category">
+          <Translate sentence={"category"} />
+        </label>
       </div>
       <div className="col-3 zero-padding">
         <select
@@ -24,17 +24,19 @@ export default function EgyptCategory({
           onBlur={blurHandler}
         >
           <option value="">
-            -- {t("choose_category")} --
+            -- <Translate sentence={"choose_category"} /> --
           </option>
           <option value="rest_provinces">
-            {t("rest_provinces")}
+            <Translate sentence={"rest_provinces"} />
           </option>
           <option value="matrouh_residents">
-            {t("matrouh_residents")}
+            <Translate sentence={"matrouh_residents"} />
           </option>
         </select>
         {hasError && (
-          <p className="error">{t("category_error")}</p>
+          <p className="error">
+            <Translate sentence={"category_error"} />
+          </p>
         )}
       </div>
     </>

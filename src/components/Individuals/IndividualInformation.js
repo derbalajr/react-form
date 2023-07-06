@@ -8,6 +8,7 @@ import BirthDate from "../inputs/BirthDate";
 import OtherCategory from "../inputs/OtherCategory";
 import EgyptCategory from "../inputs/EgyptCategory";
 import Transit from "../inputs/Transit";
+import Translate from "../Translate";
 
 import useInput from "../../hooks/use-input";
 
@@ -15,16 +16,12 @@ import { addIndividual } from "../../store";
 
 import { useDispatch } from "react-redux";
 
-import { useTranslation } from 'react-i18next';
-
+import { useTranslation } from "react-i18next";
 
 import "./css/IndividualsInformation.css";
 
-
 export default function IndividualInformation() {
   const dispatch = useDispatch();
-  const { t } = useTranslation();
-
 
   //name
   const {
@@ -254,7 +251,7 @@ export default function IndividualInformation() {
             <div className="col-1"></div>
             <div className="form-actions col-1 zero-padding submit">
               <button disabled={!formIsValid}>
-                {t("add")}
+                <Translate sentence={"add"} />
               </button>
             </div>
           </div>

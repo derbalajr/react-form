@@ -1,7 +1,6 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-
-import { useTranslation } from 'react-i18next';
+import Translate from "../Translate";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,11 +11,12 @@ export default function BirthDate({
   blurHandler,
   hasError,
 }) {
-  const { t } = useTranslation();
   return (
     <>
       <div className="col-1 zero-padding">
-        <label htmlFor="birth_date">{t('birth_date')}</label>
+        <label htmlFor="birth_date">
+          <Translate sentence={"birth_date"} />
+        </label>
       </div>
       <div className="col-3 zero-padding date">
         <DatePicker
@@ -31,7 +31,11 @@ export default function BirthDate({
           showYearDropdown
           className={`${classes} input-field`}
         />
-        {hasError && <p className="error">{t('birth_date_error')}</p>}
+        {hasError && (
+          <p className="error">
+            <Translate sentence={"birth_date_error"} />
+          </p>
+        )}
       </div>
     </>
   );

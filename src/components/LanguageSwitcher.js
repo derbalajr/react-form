@@ -15,7 +15,6 @@ export default function LanguageSwitcher() {
       <div className="container language-switcher">
       <label>
         <a onClick={changeLanguage}>
-          {/* {i18n.language === "en" ? "Arabic" : "English"} */}
           <FontAwesomeIcon icon={faGlobe} bounce size="xl" />
         </a>
         </label>

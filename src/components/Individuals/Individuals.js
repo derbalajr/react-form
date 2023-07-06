@@ -6,20 +6,19 @@ import IndividualsTable from "./IndividualsTable";
 
 import { useSelector } from "react-redux";
 
-import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from "../LanguageSwitcher";
-
+import Translate from "../Translate";
 
 import "./css/Individuals.css";
 
 export default function Individuals() {
-  const { t } = useTranslation();
-
   const individuals = useSelector((state) => state.individuals);
   return (
     <>
       <div className="header">
-        <h2>{t("individuals_screen")}</h2>
+        <h2>
+          <Translate sentence={"individuals_screen"} />
+        </h2>
       </div>
       <LanguageSwitcher />
       <IndividualInformation />

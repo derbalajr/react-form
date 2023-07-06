@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useTranslation } from "react-i18next";
+import Translate from "../Translate";
 
 export default function Nationality({
   classes,
@@ -9,13 +9,11 @@ export default function Nationality({
   blurHandler,
   hasError,
 }) {
-  const { t } = useTranslation();
-
   return (
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="nationality">
-          {t("nationality")}
+          <Translate sentence={"nationality"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -27,14 +25,22 @@ export default function Nationality({
           onBlur={blurHandler}
         >
           <option value="">
-            -- {t("choose_nationality")} --
+            -- <Translate sentence={"choose_nationality"} /> --
           </option>
-          <option value="libya">{t("libya")}</option>
-          <option value="egypt">{t("egypt")}</option>
-          <option value="sudan">{t("sudan")}</option>
+          <option value="libya">
+            <Translate sentence={"libya"} />
+          </option>
+          <option value="egypt">
+            <Translate sentence={"egypt"} />
+          </option>
+          <option value="sudan">
+            <Translate sentence={"sudan"} />
+          </option>
         </select>
         {hasError && (
-          <p className="error">{t("nationality_error")}</p>
+          <p className="error">
+            <Translate sentence={"nationality_error"} />
+          </p>
         )}
       </div>
     </>
