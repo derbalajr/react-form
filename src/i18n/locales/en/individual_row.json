@@ -1,0 +1,13 @@
+{
+    "egypt": "Egypt",
+    "libya": "Libya",
+    "sudan": "Sudan",
+    "rest_provinces": "The rest of the provinces",
+    "matrouh_residents": "Matrouh Residents",
+    "other_nationalities": "Other Nationalities",
+    "nothing": "Nothing",
+    "diplomatic": "Diplomatic",
+    "special_needs": "Special Needs",
+    "not_exempted": "Not Exempted",
+    "exempted": "Exempted"
+}

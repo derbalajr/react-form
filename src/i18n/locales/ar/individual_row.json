@@ -1,0 +1,13 @@
+{
+    "egypt": "مصر",
+    "libya": "ليبيا",
+    "sudan": "السودان",
+    "rest_provinces": "باقي المحافظات",
+    "matrouh_residents": "أبناء مطروح",
+    "other_nationalities": "جنسيات أخري",
+    "nothing": "لا يوجد",
+    "diplomatic": "دبلوماسي",
+    "special_needs": "ذوي احتياجات",
+    "not_exempted": "غير معفي",
+    "exempted": "معفي"
+}

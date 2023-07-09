@@ -13,7 +13,7 @@ export default function Transit({
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="transit_class">
-          <Translate sentence={"transit_class"} />
+          <Translate sentence={"transit_class"} file={"transit"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -25,21 +25,21 @@ export default function Transit({
           onBlur={blurHandler}
         >
           <option value="">
-            -- <Translate sentence={"choose_transit_class"} /> --
+            -- <Translate sentence={"choose_transit_class"} file={"transit"} /> --
           </option>
           <option value="nothing">
-            <Translate sentence={"nothing"} />
+            <Translate sentence={"nothing"} file={"transit"} />
           </option>
           <option value="diplomatic">
-            <Translate sentence={"diplomatic"} />
+            <Translate sentence={"diplomatic"} file={"transit"} />
           </option>
           <option value="special_needs">
-            <Translate sentence={"special_needs"} />
+            <Translate sentence={"special_needs"} file={"transit"} />
           </option>
         </select>
         {hasError && (
           <p className="error">
-            <Translate sentence={"transit_class_error"} />
+            <Translate sentence={"transit_class_error"} file={"transit"} />
           </p>
         )}
       </div>

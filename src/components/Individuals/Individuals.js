@@ -17,7 +17,7 @@ export default function Individuals() {
     <>
       <div className="header">
         <h2>
-          <Translate sentence={"individuals_screen"} />
+          <Translate sentence={"individuals_screen"} file={"individuals"} />
         </h2>
       </div>
       <LanguageSwitcher />

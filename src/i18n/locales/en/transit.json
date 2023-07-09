@@ -1,0 +1,8 @@
+{
+    "transit_class": "Transit",
+    "choose_transit_class": "Choose Transit Class",
+    "nothing": "Nothing",
+    "diplomatic": "Diplomatic",
+    "special_needs": "Special Needs",
+    "transit_class_error": "Please select a transit class"
+}

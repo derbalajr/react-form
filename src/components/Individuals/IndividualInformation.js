@@ -251,7 +251,7 @@ export default function IndividualInformation() {
             <div className="col-1"></div>
             <div className="form-actions col-1 zero-padding submit">
               <button disabled={!formIsValid}>
-                <Translate sentence={"add"} />
+                <Translate sentence={"add"} file={"individual_information"} />
               </button>
             </div>
           </div>

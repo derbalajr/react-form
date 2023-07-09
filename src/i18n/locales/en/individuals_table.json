@@ -1,0 +1,9 @@
+{
+    "transients_list": "List of transients",
+    "name": "Name",
+    "doc_number": "Document Number",
+    "nationality": "Nationality",
+    "birth_date": "Birth Date",
+    "category": "Category",
+    "exemption_status": "Exemption Status"
+}

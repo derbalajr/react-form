@@ -8,28 +8,28 @@ export default function IndividualsTable() {
     <>
       <div className="individuals-table">
         <h4>
-          <Translate sentence={"transients_list"} />
+          <Translate sentence={"transients_list"} file={"individuals_table"} />
         </h4>
         <table className="table table-striped table-dark custom-table">
           <thead>
             <tr>
               <th>
-                <Translate sentence={"name"} />
+                <Translate sentence={"name"} file={"individuals_table"} />
               </th>
               <th>
-                <Translate sentence={"doc_number"} />
+                <Translate sentence={"doc_number"} file={"individuals_table"} />
               </th>
               <th>
-                <Translate sentence={"nationality"} />
+                <Translate sentence={"nationality"} file={"individuals_table"} />
               </th>
               <th>
-                <Translate sentence={"birth_date"} />
+                <Translate sentence={"birth_date"} file={"individuals_table"} />
               </th>
               <th>
-                <Translate sentence={"category"} />
+                <Translate sentence={"category"} file={"individuals_table"} />
               </th>
               <th>
-                <Translate sentence={"exemption_status"} />
+                <Translate sentence={"exemption_status"} file={"individuals_table"} />
               </th>
             </tr>
           </thead>

@@ -12,7 +12,7 @@ export default function DocumentNumber({
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="doc_number">
-          <Translate sentence={"doc_number"} />
+          <Translate sentence={"doc_number"} file={"document_number"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -27,7 +27,7 @@ export default function DocumentNumber({
         />
         {hasError && (
           <p className="error">
-            <Translate sentence={"doc_number_error"} />
+            <Translate sentence={"doc_number_error"} file={"document_number"} />
           </p>
         )}
       </div>

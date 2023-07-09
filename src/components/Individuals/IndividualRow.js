@@ -18,14 +18,14 @@ export default function IndividualRow() {
           <td>{individual.name}</td>
           <td>{individual.documentNumber}</td>
           <td>
-            <Translate sentence={individual.nationality} />
+            <Translate sentence={individual.nationality} file={"individual_row"} />
           </td>
           <td>{formatDate(individual.date)}</td>
           <td>
-            <Translate sentence={individual.category} />
+            <Translate sentence={individual.category} file={"individual_row"} />
           </td>
           <td>
-            <Translate sentence={individual.transit} />
+            <Translate sentence={individual.transit} file={"individual_row"} />
           </td>
         </tr>
       ))}

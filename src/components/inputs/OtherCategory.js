@@ -13,7 +13,7 @@ export default function OtherCategory({
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="category">
-          <Translate sentence={"category"} />
+          <Translate sentence={"category"} file={"category"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -25,15 +25,15 @@ export default function OtherCategory({
           onBlur={blurHandler}
         >
           <option value="">
-            -- <Translate sentence={"choose_category"} /> --
+            -- <Translate sentence={"choose_category"} file={"category"} /> --
           </option>
           <option value="other_nationalities">
-            <Translate sentence={"other_nationalities"} />
+            <Translate sentence={"other_nationalities"} file={"category"} />
           </option>
         </select>
         {hasError && (
           <p className="error">
-            <Translate sentence={"category_error"} />
+            <Translate sentence={"category_error"} file={"category"} />
           </p>
         )}
       </div>

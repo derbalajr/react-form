@@ -1,0 +1,10 @@
+{
+    "transients_list": "قائمة العابرين",
+    "name": "الاسم",
+    "doc_number": "رقم الوثيقة",
+    "nationality": "الجنسية",
+    "birth_date": "تاريخ الميلاد",
+    "category": "التصنيف",
+    "exemption_status": "حالة الأعفاء"
+    
+}

@@ -15,7 +15,7 @@ export default function BirthDate({
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="birth_date">
-          <Translate sentence={"birth_date"} />
+          <Translate sentence={"birth_date"} file={"birth_date"} />
         </label>
       </div>
       <div className="col-3 zero-padding date">
@@ -33,7 +33,7 @@ export default function BirthDate({
         />
         {hasError && (
           <p className="error">
-            <Translate sentence={"birth_date_error"} />
+            <Translate sentence={"birth_date_error"} file={"birth_date"} />
           </p>
         )}
       </div>

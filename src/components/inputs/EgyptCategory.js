@@ -12,7 +12,7 @@ export default function EgyptCategory({
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="category">
-          <Translate sentence={"category"} />
+          <Translate sentence={"category"} file={"category"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -24,18 +24,18 @@ export default function EgyptCategory({
           onBlur={blurHandler}
         >
           <option value="">
-            -- <Translate sentence={"choose_category"} /> --
+            -- <Translate sentence={"choose_category"} file={"category"} /> --
           </option>
           <option value="rest_provinces">
-            <Translate sentence={"rest_provinces"} />
+            <Translate sentence={"rest_provinces"} file={"category"} />
           </option>
           <option value="matrouh_residents">
-            <Translate sentence={"matrouh_residents"} />
+            <Translate sentence={"matrouh_residents"} file={"category"} />
           </option>
         </select>
         {hasError && (
           <p className="error">
-            <Translate sentence={"category_error"} />
+            <Translate sentence={"category_error"} file={"category"} />
           </p>
         )}
       </div>

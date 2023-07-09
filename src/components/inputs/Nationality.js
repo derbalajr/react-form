@@ -13,7 +13,7 @@ export default function Nationality({
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="nationality">
-          <Translate sentence={"nationality"} />
+          <Translate sentence={"nationality"} file={"nationality"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -25,21 +25,21 @@ export default function Nationality({
           onBlur={blurHandler}
         >
           <option value="">
-            -- <Translate sentence={"choose_nationality"} /> --
+            -- <Translate sentence={"choose_nationality"} file={"nationality"} /> --
           </option>
           <option value="libya">
-            <Translate sentence={"libya"} />
+            <Translate sentence={"libya"} file={"nationality"} />
           </option>
           <option value="egypt">
-            <Translate sentence={"egypt"} />
+            <Translate sentence={"egypt"} file={"nationality"} />
           </option>
           <option value="sudan">
-            <Translate sentence={"sudan"} />
+            <Translate sentence={"sudan"} file={"nationality"} />
           </option>
         </select>
         {hasError && (
           <p className="error">
-            <Translate sentence={"nationality_error"} />
+            <Translate sentence={"nationality_error"} file={"nationality"} />
           </p>
         )}
       </div>

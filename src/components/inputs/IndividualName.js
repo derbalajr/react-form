@@ -13,7 +13,7 @@ export default function IndividualName({
     <>
       <div className="col-1 zero-padding">
         <label htmlFor="name">
-          <Translate sentence={"name"} />
+          <Translate sentence={"name"} file={"individual_name"} />
         </label>
       </div>
       <div className="col-3 zero-padding">
@@ -28,7 +28,7 @@ export default function IndividualName({
         />
         {hasError && (
           <p className="error">
-            <Translate sentence={"name_error"} />
+            <Translate sentence={"name_error"} file={"individual_name"} />
           </p>
         )}
       </div>
