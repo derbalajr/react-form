@@ -31,6 +31,9 @@ export default function IndividualsTable() {
               <th>
                 <Translate sentence={"exemption_status"} file={"individuals_table"} />
               </th>
+              <th>
+                File
+              </th>
             </tr>
           </thead>
           <tbody>

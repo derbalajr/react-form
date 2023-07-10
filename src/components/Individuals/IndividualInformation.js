@@ -91,6 +91,26 @@ export default function IndividualInformation() {
     reset: resetTransit,
   } = useInput((value) => value.trim() !== "");
 
+
+
+  //document file attach
+
+  const checkFileExtension = (fileName) => {
+    const allowedExtensions = [".pdf", ".doc", ".docx"];
+    const fileExtension = fileName.substr(fileName.lastIndexOf("."));
+    return allowedExtensions.includes(fileExtension);
+  };
+
+  const {
+    value: documentFileValue,
+    valid: documentFileIsValid,
+    valueChangeHandler: documentFileChangeHandler,
+    inputBlurHandler: documentFileBlurHandler,
+    hasError: documentFileHasError,
+    reset: resetDocumentFile,
+  } = useInput((value) => value.trim() !== "" && checkFileExtension(value));
+
+
   let formIsValid = false;
   if (
     nameIsValid &&
@@ -98,7 +118,7 @@ export default function IndividualInformation() {
     nationalityIsValid &&
     dateIsValid &&
     categoryIsValid &&
-    transitIsValid
+    transitIsValid && documentFileIsValid
   ) {
     formIsValid = true;
   }
@@ -128,6 +148,7 @@ export default function IndividualInformation() {
           : transitValue === "diplomatic" || transitValue === "special_needs"
           ? "exempted"
           : transitValue,
+          documentFile: documentFileValue
     };
 
     dispatch(addIndividual(newIndividual));
@@ -149,11 +170,18 @@ export default function IndividualInformation() {
 
     console.log(transitValue);
     resetTransit();
+
+    console.log(documentFileValue);
+    resetDocumentFile();
   };
 
   const nameClasses = nameHasError ? "form-control invalid" : "form-control";
 
   const documentNumberClasses = documentNumberHasError
+    ? "form-control invalid"
+    : "form-control";
+
+    const documentFileClasses = documentFileHasError
     ? "form-control invalid"
     : "form-control";
 
@@ -194,7 +222,11 @@ export default function IndividualInformation() {
             blurHandler={documentNumberBlurHandler}
             hasError={documentNumberHasError}
           />
-          <Attach />
+          <Attach classes={documentFileClasses}
+            value={documentFileValue}
+            changeHandler={documentFileChangeHandler}
+            blurHandler={documentFileBlurHandler}
+            hasError={documentFileHasError} />
           <div className="col-1"></div>
         </div>
         <div className="row form-group">

@@ -27,6 +27,9 @@ export default function IndividualRow() {
           <td>
             <Translate sentence={individual.transit} file={"individual_row"} />
           </td>
+          <td>
+            {individual.documentFile}
+          </td>
         </tr>
       ))}
     </>
