@@ -32,7 +32,7 @@ export default function IndividualsTable() {
                 <Translate sentence={"exemption_status"} file={"individuals_table"} />
               </th>
               <th>
-                File
+              <Translate sentence={"attachments"} file={"individuals_table"} />
               </th>
             </tr>
           </thead>

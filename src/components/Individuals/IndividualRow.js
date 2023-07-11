@@ -11,6 +11,12 @@ export default function IndividualRow() {
     const day = String(date.getDate()).padStart(2, "0");
     return `${year}/${month}/${day}`;
   };
+  const getFileCount = (individual) => {
+    if (individual.documentFiles && individual.documentFiles.length > 0) {
+      return individual.documentFiles.length;
+    }
+    return 0;
+  };
   return (
     <>
       {individuals.map((individual, index) => (
@@ -18,7 +24,10 @@ export default function IndividualRow() {
           <td>{individual.name}</td>
           <td>{individual.documentNumber}</td>
           <td>
-            <Translate sentence={individual.nationality} file={"individual_row"} />
+            <Translate
+              sentence={individual.nationality}
+              file={"individual_row"}
+            />
           </td>
           <td>{formatDate(individual.date)}</td>
           <td>
@@ -28,7 +37,13 @@ export default function IndividualRow() {
             <Translate sentence={individual.transit} file={"individual_row"} />
           </td>
           <td>
-            {individual.documentFile}
+            {individual.documentFile && (
+              <img
+                src={individual.documentFile.imageUrl}
+                alt={individual.documentFile.name}
+                style={{ width: "100px" }}
+              />
+            )}
           </td>
         </tr>
       ))}

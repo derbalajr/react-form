@@ -16,8 +16,6 @@ import { addIndividual } from "../../store";
 
 import { useDispatch } from "react-redux";
 
-import { useTranslation } from "react-i18next";
-
 import "./css/IndividualsInformation.css";
 
 export default function IndividualInformation() {
@@ -91,25 +89,29 @@ export default function IndividualInformation() {
     reset: resetTransit,
   } = useInput((value) => value.trim() !== "");
 
-
-
   //document file attach
 
-  const checkFileExtension = (fileName) => {
-    const allowedExtensions = [".pdf", ".doc", ".docx"];
-    const fileExtension = fileName.substr(fileName.lastIndexOf("."));
-    return allowedExtensions.includes(fileExtension);
-  };
+  // const checkFileExtension = (fileName) => {
+  //   const allowedExtensions = [".pdf", ".doc", ".docx"];
+  //   const fileExtension = fileName.substr(fileName.lastIndexOf("."));
+  //   return allowedExtensions.includes(fileExtension);
+  // };
 
+  const validateFileInput = (file) => {
+    if (!file || file.length === 0) {
+      return "Please select a file.";
+    }
+
+    return "";
+  };
   const {
-    value: documentFileValue,
+    fileValue: documentFileValue,
     valid: documentFileIsValid,
-    valueChangeHandler: documentFileChangeHandler,
+    handleFileChange: documentFileChangeHandler,
     inputBlurHandler: documentFileBlurHandler,
     hasError: documentFileHasError,
     reset: resetDocumentFile,
-  } = useInput((value) => value.trim() !== "" && checkFileExtension(value));
-
+  } = useInput(validateFileInput);
 
   let formIsValid = false;
   if (
@@ -118,7 +120,8 @@ export default function IndividualInformation() {
     nationalityIsValid &&
     dateIsValid &&
     categoryIsValid &&
-    transitIsValid && documentFileIsValid
+    transitIsValid &&
+    documentFileIsValid
   ) {
     formIsValid = true;
   }
@@ -148,7 +151,7 @@ export default function IndividualInformation() {
           : transitValue === "diplomatic" || transitValue === "special_needs"
           ? "exempted"
           : transitValue,
-          documentFile: documentFileValue
+      documentFile: documentFileValue,
     };
 
     dispatch(addIndividual(newIndividual));
@@ -181,7 +184,7 @@ export default function IndividualInformation() {
     ? "form-control invalid"
     : "form-control";
 
-    const documentFileClasses = documentFileHasError
+  const documentFileClasses = documentFileHasError
     ? "form-control invalid"
     : "form-control";
 
@@ -222,11 +225,13 @@ export default function IndividualInformation() {
             blurHandler={documentNumberBlurHandler}
             hasError={documentNumberHasError}
           />
-          <Attach classes={documentFileClasses}
+          <Attach
+            classes={documentFileClasses}
             value={documentFileValue}
             changeHandler={documentFileChangeHandler}
             blurHandler={documentFileBlurHandler}
-            hasError={documentFileHasError} />
+            hasError={documentFileHasError}
+          />
           <div className="col-1"></div>
         </div>
         <div className="row form-group">

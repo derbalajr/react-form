@@ -4,6 +4,9 @@ const useInput = (validateValue) => {
   const [enteredValue, setEnteredValue] = useState("");
   const [isTouched, setIsTouched] = useState(false);
 
+  const [file, setFile] = useState();
+  const [imageUrl, setImageUrl] = useState('');
+
   const valueIsValid = validateValue(enteredValue);
   const hasError = !valueIsValid && isTouched;
 
@@ -23,14 +26,28 @@ const useInput = (validateValue) => {
     setEnteredValue(date);
   };
 
+  const handleFileChange = (event) => {
+    const selectedFile = event.target.files[0];
+    setFile(selectedFile);
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImageUrl(reader.result);
+    };
+    reader.readAsDataURL(selectedFile);
+  };
+
   return {
     value: enteredValue,
+    fileValue: file,
+    imageUrl,
     valid: valueIsValid,
     hasError,
     valueChangeHandler,
     inputBlurHandler,
     reset,
     handleBirthDateChange,
+    handleFileChange
   };
 };
 
