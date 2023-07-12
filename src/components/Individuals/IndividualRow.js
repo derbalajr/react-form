@@ -2,6 +2,8 @@ import React from "react";
 
 import { useSelector } from "react-redux";
 import Translate from "../Translate";
+import Checkbox from '@mui/material/Checkbox';
+
 
 export default function IndividualRow() {
   const individuals = useSelector((state) => state.individuals);
@@ -44,6 +46,12 @@ export default function IndividualRow() {
                 style={{ width: "100px" }}
               />
             )}
+          </td>
+          <td>
+          <Checkbox disabled={individual.transit === "exempted"} />
+          </td>
+          <td>
+          <Checkbox  />
           </td>
         </tr>
       ))}

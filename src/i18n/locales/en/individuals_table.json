@@ -6,5 +6,7 @@
     "birth_date": "Birth Date",
     "category": "Category",
     "exemption_status": "Exemption Status",
-    "attachments": "Attachments"
+    "attachments": "Attachments",
+    "collect": "Collect",
+    "print": "Print"
 }

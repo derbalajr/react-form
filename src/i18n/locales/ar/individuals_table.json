@@ -6,6 +6,8 @@
     "birth_date": "تاريخ الميلاد",
     "category": "التصنيف",
     "exemption_status": "حالة الأعفاء",
-    "attachments": "الملحقات"
+    "attachments": "الملحقات",
+    "collect": "تحصيل",
+    "print": "طباعة"
     
 }

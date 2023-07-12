@@ -34,6 +34,13 @@ export default function IndividualsTable() {
               <th>
               <Translate sentence={"attachments"} file={"individuals_table"} />
               </th>
+              <th>
+              <Translate sentence={"collect"} file={"individuals_table"} />
+              </th>
+              <th>
+              <Translate sentence={"print"} file={"individuals_table"} />
+              </th>
+
             </tr>
           </thead>
           <tbody>
