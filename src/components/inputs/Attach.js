@@ -16,7 +16,7 @@ export default function Attach({
       <div className="col-1 zero-padding">
         <label className="zero-padding" htmlFor="fileInput">
           <a className={`${classes} form-select input-field attach btn`}>
-            <FontAwesomeIcon icon={faPaperclip} size="xl" />
+            <FontAwesomeIcon icon={faPaperclip} size="xl"  />
           </a>
         </label>
 
