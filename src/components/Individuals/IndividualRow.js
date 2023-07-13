@@ -13,12 +13,7 @@ export default function IndividualRow() {
     const day = String(date.getDate()).padStart(2, "0");
     return `${year}/${month}/${day}`;
   };
-  const getFileCount = (individual) => {
-    if (individual.documentFiles && individual.documentFiles.length > 0) {
-      return individual.documentFiles.length;
-    }
-    return 0;
-  };
+
   return (
     <>
       {individuals.map((individual, index) => (

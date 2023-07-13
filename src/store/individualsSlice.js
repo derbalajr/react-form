@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 const individualsSlice = createSlice({
   name: 'individuals',
@@ -11,11 +11,4 @@ const individualsSlice = createSlice({
 });
 
 export const { addIndividual } = individualsSlice.actions;
-
-const store = configureStore({
-  reducer: {
-    individuals: individualsSlice.reducer,
-  },
-});
-
-export default store;
+export default individualsSlice.reducer;

@@ -12,7 +12,7 @@ import Translate from "../Translate";
 
 import useInput from "../../hooks/use-input";
 
-import { addIndividual } from "../../store";
+import { addIndividual } from "../../store/individualsSlice";
 
 import { useDispatch } from "react-redux";
 
@@ -133,8 +133,9 @@ export default function IndividualInformation() {
       !documentNumberIsValid &&
       !nationalityIsValid &&
       !dateIsValid &&
-      categoryIsValid &&
-      transitIsValid
+      !categoryIsValid &&
+      !transitIsValid &&
+      !documentFileIsValid
     ) {
       return;
     }
