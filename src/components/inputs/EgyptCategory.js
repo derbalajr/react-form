@@ -10,7 +10,7 @@ export default function EgyptCategory({
 }) {
   return (
     <>
-      <div className="col-1 zero-padding">
+      <div className="col-1 offset-1 zero-padding">
         <label htmlFor="category">
           <Translate sentence={"category"} file={"category"} />
         </label>

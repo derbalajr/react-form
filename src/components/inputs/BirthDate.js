@@ -18,7 +18,7 @@ export default function BirthDate({
           <Translate sentence={"birth_date"} file={"birth_date"} />
         </label>
       </div>
-      <div className="col-3 zero-padding date">
+      <div className="col-3 offset-1 zero-padding date">
         <DatePicker
           selected={value}
           onChange={changeHandler}

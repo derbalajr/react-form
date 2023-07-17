@@ -1,6 +1,7 @@
 import React from "react";
 
-import IndividualInformation from "./IndividualInformation";
+// import IndividualInformation from "./IndividualInformation";
+import IndividualForm from "./IndividualForm";
 
 import IndividualsTable from "./IndividualsTable";
 
@@ -21,7 +22,8 @@ export default function Individuals() {
         </h2>
       </div>
       <LanguageSwitcher />
-      <IndividualInformation />
+      {/* <IndividualInformation /> */}
+      <IndividualForm />
       <div className="container">
         {individuals.length !== 0 && <IndividualsTable />}
       </div>

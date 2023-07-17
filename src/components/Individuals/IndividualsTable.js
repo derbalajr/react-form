@@ -22,7 +22,10 @@ export default function IndividualsTable() {
                 <Translate sentence={"doc_number"} file={"individuals_table"} />
               </th>
               <th>
-                <Translate sentence={"nationality"} file={"individuals_table"} />
+                <Translate
+                  sentence={"nationality"}
+                  file={"individuals_table"}
+                />
               </th>
               <th>
                 <Translate sentence={"birth_date"} file={"individuals_table"} />
@@ -31,26 +34,39 @@ export default function IndividualsTable() {
                 <Translate sentence={"category"} file={"individuals_table"} />
               </th>
               <th>
-                <Translate sentence={"exemption_status"} file={"individuals_table"} />
+                <Translate
+                  sentence={"exemption_status"}
+                  file={"individuals_table"}
+                />
               </th>
               <th>
-              <Translate sentence={"attachments"} file={"individuals_table"} />
+                <Translate
+                  sentence={"attachments"}
+                  file={"individuals_table"}
+                />
               </th>
               <th>
-              <Translate sentence={"collect"} file={"individuals_table"} />
+                <Translate sentence={"collect"} file={"individuals_table"} />
               </th>
               <th>
-              <Translate sentence={"print"} file={"individuals_table"} />
+                <Translate sentence={"print"} file={"individuals_table"} />
               </th>
-
             </tr>
           </thead>
           <tbody>
             <IndividualRow />
           </tbody>
         </table>
-        <Print />
-        <Pay />
+      </div>
+      <div className="container">
+        <div className="row">
+            <div className="col-1 no-padding">
+              <Print />
+            </div>
+            <div className="col-1 no-padding">
+              <Pay />
+            </div>
+        </div>
       </div>
     </>
   );

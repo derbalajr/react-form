@@ -16,7 +16,7 @@ export default function Nationality({
           <Translate sentence={"nationality"} file={"nationality"} />
         </label>
       </div>
-      <div className="col-3 zero-padding">
+      <div className="col-3 offset-1 zero-padding">
         <select
           className={`${classes} form-select input-field`}
           id="nationality"

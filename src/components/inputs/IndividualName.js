@@ -11,7 +11,7 @@ export default function IndividualName({
 }) {
   return (
     <>
-      <div className="col-1 zero-padding">
+      <div className="col-1 zero-padding offset-1">
         <label htmlFor="name">
           <Translate sentence={"name"} file={"individual_name"} />
         </label>

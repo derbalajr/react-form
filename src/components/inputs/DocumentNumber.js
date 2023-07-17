@@ -10,7 +10,7 @@ export default function DocumentNumber({
 }) {
   return (
     <>
-      <div className="col-1 zero-padding">
+      <div className="col-1 offset-1 zero-padding">
         <label htmlFor="doc_number">
           <Translate sentence={"doc_number"} file={"document_number"} />
         </label>
