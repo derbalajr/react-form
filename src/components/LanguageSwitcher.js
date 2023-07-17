@@ -13,10 +13,10 @@ export default function LanguageSwitcher() {
   return (
     <>
       <div className="container language-switcher">
-      <label>
-        <a onClick={changeLanguage}>
-          <FontAwesomeIcon icon={faGlobe} bounce size="xl" />
-        </a>
+        <label>
+          <button onClick={changeLanguage}>
+            <FontAwesomeIcon icon={faGlobe} bounce size="xl" />
+          </button>
         </label>
       </div>
     </>

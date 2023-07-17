@@ -2,6 +2,8 @@ import React from "react";
 import IndividualRow from "./IndividualRow";
 import Translate from "../Translate";
 import "./css/IndividualsTable.css";
+import Print from "../Print";
+import Pay from "../Pay";
 
 export default function IndividualsTable() {
   return (
@@ -47,6 +49,8 @@ export default function IndividualsTable() {
             <IndividualRow />
           </tbody>
         </table>
+        <Print />
+        <Pay />
       </div>
     </>
   );
