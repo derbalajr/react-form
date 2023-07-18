@@ -1,0 +1,5 @@
+[
+    { "value": "nothing", "label": "Nothing" },
+    { "value": "diplomatic", "label": "Diplomatic" }, 
+    { "value": "special_needs", "label": "Special Needs" } 
+]

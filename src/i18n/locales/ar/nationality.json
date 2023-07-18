@@ -4,5 +4,8 @@
     "egypt": "مصر",
     "libya": "ليبيا",
     "sudan": "السودان",
+    "Egypt": "مصر",
+    "Libya": "ليبيا",
+    "Sudan": "السودان",
     "nationality_error": "يرجى إختيار البلد"
 }
