@@ -1,6 +1,6 @@
 body {
   font-family: "CustomFont", sans-serif!important;
-  background-color: #1B262C!important;
+  /* background-color: #1B262C!important; */
   margin: 0;
 
   -webkit-font-smoothing: antialiased;
@@ -21,3 +21,4 @@ code {
 label {
   color: #fff;
 }
+
